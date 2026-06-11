@@ -22,6 +22,6 @@ import { AuditLogMiddleware } from './middlewares/auditLog.middleware';
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(RequestLoggerMiddleware, AuditLogMiddleware).forRoutes('*');
+    consumer.apply(RequestLoggerMiddleware, AuditLogMiddleware).forRoutes('{*path}');
   }
 }
